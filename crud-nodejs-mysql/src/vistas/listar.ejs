@@ -1,0 +1,47 @@
+<% include parcial/encabezado %>
+
+<div class="container mt-5">
+   
+    <div class="col-md-7">
+      
+      <a href="/mostrarFormulario" class="btn btn-success">NUEVO</a>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>CODIGO</td>
+            <td>NOMBRE</td> 
+            <td>APELLIDO</td> 
+            <td>DIRECCION</td>
+            <td>EMAIL</td>
+            <td>TELEFONO</td>
+            <td>ACCIONES</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (clientes) { %>
+            <% for(var i = 0; i < clientes.length; i++) { %>
+              <tr>
+                <td><%= (i + 1) %></td>
+                <td><%= clientes[i].nombre %></td>
+                <td><%= clientes[i].apellido %></td>
+                <td><%= clientes[i].direccion %></td>
+                <td><%= clientes[i].email %></td>
+                <td><%= clientes[i].telefono %></td>
+                <td> 
+                    <a href="/buscar/<%= clientes[i].id %>" class="btn btn-info">EDITAR</a>
+                    <a href="/eliminar/<%= clientes[i].id %>" class="btn btn-danger">ELIMINAR</a> 
+                  
+                </td>
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+ 
+
+   
+</div>
+
+<% include parcial/pie %>

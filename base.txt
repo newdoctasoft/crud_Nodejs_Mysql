@@ -1,0 +1,30 @@
+-- to create a new database
+drop database api;
+CREATE DATABASE api;
+
+-- to use database
+use api;
+ 
+
+
+drop table cliente;
+CREATE TABLE cliente (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL, 
+    apellido VARCHAR(50) NOT NULL, 
+  direccion VARCHAR(100) NOT NULL,
+  email VARCHAR(15),
+   telefono VARCHAR(15) 
+);
+
+insert into cliente(nombre,apellido,direccion,email,telefono)
+values('JORGE','GODOY','LA POSTA','jorge@gmail.com','0800-330-55');
+
+-- to show all tables
+show tables;
+ 
+
+select *
+from cliente;
+
+
